@@ -6,7 +6,7 @@
         "description": "The API definition of general API-calls not bound to some specific part of the page.\n"
     },
     "paths": {
-        
+
     },
     "components": {
         "schemas": {
@@ -27,7 +27,7 @@
             "Image": {
                 "type": "object",
                 "properties": {
-                    
+
                 }
             }
         }
