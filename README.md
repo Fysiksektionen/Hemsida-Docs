@@ -25,3 +25,8 @@ För att kunna dokumentera API:t på ett smidigt sätt så använder vi oss av s
 
 ### Kör grafiska visaren
 Kör `npm run start-all` från mappen [api-server](./api-server). När detta kommando har kört igång kör både React-servern och en liten server som levererar API-filerna. Därefter är det bara att använda menyn för att navigera API:t.
+
+### Om OpenAPI
+[OpenAPI](https://github.com/OAI) är ett projekt som har skapat en syntax för att dokumentera API:er på ett sätt så att både människor och datorer kan läsa det ganska enkelt. OpenAPI-världen tillsammans med ex. [Swagger](https://swagger.io/) gör att det går att definiera, fakea, testa och visualizera sina API:er.
+
+För att lära dig skriva API finns framförallt två resurser som rekommenderas: [OpenAPI-Specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md) och även de filer som redan finns.
