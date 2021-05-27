@@ -1,8 +1,8 @@
 # Hemsida-Docs
 
-<div style="text-align: center;">
+<p align="center">
     <img src="./api-server/src/mediafiles/Fysiksektionen_logo.svg" width="300" height="300" alt=""/>
-</div>
+</p>
 
 Hej och välkommen till repot för dokumentationen av Fysiksektionens hemsida! Här försöker vi hålla allt som är relevant för dig som ska utveckla på hemsidan. Repot innehåller:
 
