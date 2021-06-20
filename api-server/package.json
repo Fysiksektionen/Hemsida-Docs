@@ -17,8 +17,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-docs": "http-server ../api-docs/ --port=3001 --cors=Authorization -c 1",
-    "start-all": "npm run start-docs & npm run start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
@@ -38,6 +36,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ] 
   }
 }

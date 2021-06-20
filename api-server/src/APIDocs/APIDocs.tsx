@@ -40,6 +40,8 @@ function APIDocs(props: APIDocsProps) {
 
     const updateAPIData = async function(jsonUrl: string) {
         if (jsonUrl !== '') {
+            console.log(jsonUrl);
+            console.log(process.env.API_BASE_URL);
             const res = await timeoutPromise(
                 fetch(jsonUrl).then(response => response.json()),
                 props.timeOut
@@ -48,6 +50,7 @@ function APIDocs(props: APIDocsProps) {
             });
             if (res) {
                 if (JSON.stringify(res) !== JSON.stringify(state.jsonData)) {
+                    console.log(res);
                     setState({
                         jsonUrl: jsonUrl,
                         jsonData: res,
@@ -135,7 +138,7 @@ function APIDocs(props: APIDocsProps) {
 }
 
 APIDocs.defaultProps = {
-    serverUrl: 'http://localhost:3001/',
+    serverUrl: process.env.REACT_APP_API_BASE_URL,
     docs: available_files,
     timeOut: 1000,
     updateInterval: 2500,
