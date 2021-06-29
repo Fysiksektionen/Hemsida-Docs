@@ -561,7 +561,7 @@
                         "type": "string"
                     },
                     "attributes": {
-                        "type": "json",
+                        "type": "object",
                         "example": "{\"color\": \"black\"}"
                     }
                 }

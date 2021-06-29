@@ -15,14 +15,14 @@
                 "properties": {
                     "code": {
                         "type": "string",
-                        "required": true,
                         "example": "Auth-1023"
                     },
                     "message": {
                         "type": "string",
                         "example": "An explanation of the error that occured (in correct language)."
                     }
-                }
+                },
+                "required": ["code"]
             },
             "Image": {
                 "type": "object",
