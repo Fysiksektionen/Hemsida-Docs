@@ -5,6 +5,16 @@
         "version": "1.0.0 ",
         "description": "The API definition of the website-related API-calls.\n"
     },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "Django"
+        },
+        {
+            "url": "http://localhost:3002/api",
+            "description": "Frontend JSON-server"
+        }
+    ],
     "paths": {
         "/pages": {
             "get": {

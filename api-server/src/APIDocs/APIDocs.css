@@ -1,10 +1,6 @@
-.swagger-ui .response-controls {
+/*.swagger-ui .response-controls {
     display: none;
-}
-
-.swagger-ui .try-out {
-    display: none;
-}
+}*/
 
 .swagger-ui .response-col_links {
     display: none;

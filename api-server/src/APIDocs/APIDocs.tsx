@@ -68,6 +68,9 @@ function APIDocs(props: APIDocsProps) {
         return () => { clearInterval(intervalId); };
     });
 
+    // Ugly, I know
+    const isRunningLocally = props.serverUrl.toLowerCase().includes("localhost") || props.serverUrl.toLowerCase().includes("0.0.0.0") || props.serverUrl.toLowerCase().includes("127.0.0.1")
+
     return (
         <div>
             {/* Header */}
@@ -98,7 +101,8 @@ function APIDocs(props: APIDocsProps) {
 
             {/* Main content */}
             <Container fluid="lg">
-                {/* Update buttons */}
+                {/* Update buttons */
+                isRunningLocally &&
                 <Row className="my-3 d-flex justify-content-center">
                     <Col xs={10} className="d-flex justify-content-around">
                         <FormControlLabel
@@ -118,14 +122,15 @@ function APIDocs(props: APIDocsProps) {
                             </Button>
                         </div>
                     </Col>
-                </Row>
+                </Row>}
 
                 {/* API content */}
                 <Row>
                     <Col xs={12} className={JSON.stringify(state.jsonData) === JSON.stringify({}) ? 'd-none' : ''}>
                         <SwaggerUI
                             url={state.jsonUrl}
-                            spec={state.jsonData}
+                            // spec={state.jsonData}
+                            supportedSubmitMethods={['get', 'options', 'head']}
                         />
                     </Col>
                 </Row>

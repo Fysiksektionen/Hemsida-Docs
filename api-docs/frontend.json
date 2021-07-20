@@ -3,8 +3,18 @@
     "info": {
         "title": "Frontend API Spec",
         "version": "0.0.1",
-        "description": "What the frontend (with mock api) currently works with."
+        "description": "What the frontend (with mock api) currently works with. Note that this page uses snake_case in the schemas, whereas the frontend natively uses camelCase, although some versions of the frontend are capable of translating between these."
     },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "Django"
+        },
+        {
+            "url": "http://localhost:3002/api",
+            "description": "Frontend JSON-server"
+        }
+    ],
     "paths": {
         "/pages": {
             "get": {
@@ -153,23 +163,23 @@
             "Site": {
                 "type": "object",
                 "properties": {
-                    "rootUrl": {
+                    "root_url": {
                         "type": "string",
                         "example": "https://f.kth.se/"
                     },
-                    "rootPage": {
+                    "root_page": {
                         "$ref": "#/components/schemas/Page"
                     },
-                    "headerContentSv": {
+                    "header_content_sv": {
                         "$ref": "#/components/schemas/SiteHeader"
                     },
-                    "headerContentEn": {
+                    "header_content_en": {
                         "$ref": "#/components/schemas/SiteHeader"
                     },
-                    "footerContentSe": {
+                    "footer_content_sv": {
                         "$ref": "#/components/schemas/SiteFooter"
                     },
-                    "footerContentEn": {
+                    "footer_content_en": {
                         "$ref": "#/components/schemas/SiteFooter"
                     }
                 }
@@ -183,7 +193,7 @@
                         "readOnly": true,
                         "example": 42
                     },
-                    "detailUrl": {
+                    "detail_url": {
                         "type": "string",
                         "readOnly": true,
                         "example": "https://f.kth.se/api/pages/42/"
@@ -216,35 +226,35 @@
                         "type": "boolean",
                         "example": true
                     },
-                    "publishedAt": {
+                    "published_at": {
                         "type": "string",
                         "format": "ISO8601 with time zone Z",
                         "example": "2021-03-01T10:59:21.522778+01:00"
                     },
-                    "lastEditedAt": {
+                    "last_edited_at": {
                         "type": "string",
                         "format": "ISO8601 with time zone Z",
                         "example": "2021-03-01T10:59:21.522778+01:00"
                     },
-                    "contentSv": {
+                    "content_sv": {
                         "$ref": "#/components/schemas/ContentObject"
                     },
-                    "contentEn": {
+                    "content_en": {
                         "$ref": "#/components/schemas/ContentObject"
                     }
                 },
                 "required": [
-                    "detailUrl",
+                    "detail_url",
                     "id",
                     "name",
                     "children",
-                    "contentEn",
-                    "contentSv",
-                    "lastEditedAt",
-                    "pageType",
+                    "content_en",
+                    "content_sv",
+                    "last_edited_at",
+                    "page_type",
                     "parent",
                     "published",
-                    "publishedAt",
+                    "published_at",
                     "slug"
                 ]
             },
@@ -254,8 +264,8 @@
                     "id": {
                         "$ref": "#/components/schemas/Page/properties/id"
                     },
-                    "detailUrl": {
-                        "$ref": "#/components/schemas/Page/properties/detailUrl"
+                    "detail_url": {
+                        "$ref": "#/components/schemas/Page/properties/detail_url"
                     },
                     "name": {
                         "$ref": "#/components/schemas/Page/properties/name"
@@ -263,7 +273,7 @@
                 },
                 "required": [
                     "id",
-                    "detailUrl",
+                    "detail_url",
                     "name"
                 ]
             },
@@ -291,7 +301,7 @@
                     "page": {
                         "$ref": "#/components/schemas/MinimalPage"
                     },
-                    "isMenu": {
+                    "is_menu": {
                         "type": "boolean",
                         "readOnly": true,
                         "example": false
@@ -301,7 +311,7 @@
                     "id",
                     "name",
                     "link",
-                    "isMenu"
+                    "is_menu"
                 ]
             },
             "Menu": {
@@ -317,7 +327,7 @@
                                 "items": {
                                     "$ref": "#/components/schemas/MenuItem"
                                 },
-                                "description": "If isMenu is true the object is rendered as a Menu."
+                                "description": "If is_menu is true the object is rendered as a Menu."
                             }
                         }
                     }
@@ -331,7 +341,7 @@
                         "readOnly": true,
                         "example": 1
                     },
-                    "detailUrl": {
+                    "detail_url": {
                         "type": "string",
                         "readOnly": true,
                         "example": "https://f.kth.se/api/redirects/1/"
@@ -362,7 +372,7 @@
                         "readOnly": true,
                         "example": 21362
                     },
-                    "detailUrl": {
+                    "detail_url": {
                         "type": "string",
                         "readOnly": true,
                         "example": "https://f.kth.se/api/content-object/21362/"
@@ -371,7 +381,7 @@
                         "type": "string",
                         "example": "sidebar"
                     },
-                    "dbType": {
+                    "db_type": {
                         "type": "string"
                     },
                     "attributes": {
@@ -381,8 +391,8 @@
                 },
                 "required": [
                     "id",
-                    "detailUrl",
-                    "dbType",
+                    "detail_url",
+                    "db_type",
                     "attributes"
                 ]
             },
@@ -436,7 +446,7 @@
                     },
                     {
                         "properties": {
-                            "dbType": {
+                            "db_type": {
                                 "type": "string",
                                 "example": "image"
                             },
@@ -475,7 +485,7 @@
                     },
                     {
                         "properties": {
-                            "dbType": {
+                            "db_type": {
                                 "type": "string",
                                 "example": "page"
                             },
@@ -494,7 +504,7 @@
                     },
                     {
                         "properties": {
-                            "dbType": {
+                            "db_type": {
                                 "type": "string",
                                 "example": "dict"
                             },
@@ -517,7 +527,7 @@
                     },
                     {
                         "properties": {
-                            "dbType": {
+                            "db_type": {
                                 "type": "string",
                                 "example": "list"
                             },
